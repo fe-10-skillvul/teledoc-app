@@ -1,0 +1,147 @@
+:root {
+  --primary: #255ed6;
+  --font: #252424;
+  --white: #fffffff5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+  color: var(--font);
+  padding-top: 4rem;
+  max-height: 2000px;
+}
+
+/*navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 7%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  border-bottom: 1px solid var(--primary);
+  font-weight: bold;
+  font-size: 16px;
+  height: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.navbar-logo {
+  align-items: flex-start;
+}
+
+.navbar .navbar-nav a {
+  color: var(--font);
+  display: inline-block;
+  font-size: 0.9rem;
+  margin: 1rem 1rem;
+}
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linier;
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+/* footer */
+.footer {
+  margin-top: 8rem;
+  background-color: #284450;
+  color: white;
+  position: fixed;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.footertele {
+  display: flex;
+  padding: 3rem 7%;
+  justify-content: space-around;
+}
+
+.label-footer h6 {
+  color: white;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+}
+.icons-footer {
+  margin-top: 1rem;
+}
+.icons-footer .iconsf {
+  color: white;
+}
+.sitemap-footer {
+  font-size: 24px;
+  font-weight: 700;
+}
+.sitemap-footer .lkf {
+  display: block;
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.akhirfooter {
+  margin-top: 10px;
+  display: flex;
+  background-color: #1c3641;
+  justify-content: space-around;
+  border-top: 1px solid #ffffff;
+  padding: 1.4rem 7%;
+}
+
+/* media query */
+@media (max-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  .navbarNav {
+    display: inline-block;
+  }
+}
+
+/* HP */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+  .navbarNav {
+    display: inline-block;
+  }
+  .navbar-extra {
+    display: none;
+  }
+}
