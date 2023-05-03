@@ -18,8 +18,9 @@ body {
   font-family: "Inter", sans-serif;
   background-color: var(--white);
   color: var(--font);
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   max-height: 2000px;
+  width: 100%;
 }
 
 /*navbar*/
@@ -27,17 +28,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 7%;
   background-color: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999;
   border-bottom: 1px solid var(--primary);
   font-weight: bold;
   font-size: 16px;
-  height: 2rem;
+  height: 70px;
   width: 100%;
   overflow: hidden;
 }
@@ -67,15 +66,43 @@ body {
   transform: scaleX(0.5);
 }
 
-/* footer */
+/* artikel */
+.search {
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.topic {
+  margin-right: 10px;
+}
+.top {
+  text-decoration: none;
+}
+
+.other {
+  text-decoration: none;
+}
+
+#otherArticles .card {
+  height: 69px;
+}
+
+#otherArticles .card-title {
+  font-size: 1rem;
+  line-height: 1.2;
+  height: 2.4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .footer {
   margin-top: 8rem;
   background-color: #284450;
   color: white;
-  position: fixed;
   width: 100%;
-  position: fixed;
   bottom: 0;
+  flex-shrink: 0;
 }
 .footertele {
   display: flex;
@@ -131,12 +158,18 @@ body {
   .navbarNav {
     display: inline-block;
   }
+  .navbar {
+    height: 200px;
+  }
 }
 
 /* HP */
 @media (max-width: 450px) {
   html {
     font-size: 55%;
+  }
+  .navbar {
+    height: 200px;
   }
   .navbarNav {
     display: inline-block;

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News API</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row" id="news"></div>
+      <div class="row mt-3" id="load-more">
+        <div class="col-12 text-center">
+          <button class="btn btn-primary">Load More</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const url = "https://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=bb2c3dd8bdb84cf9a75cba68741aa1ce";
+
+        // Mengambil data dari News API
+        $.get(url, function (data) {
+          let articles = data.articles;
+
+          // Mengurutkan artikel berdasarkan tanggal terbaru
+          articles.sort(function (a, b) {
+            return new Date(b.publishedAt) - new Date(a.publishedAt);
+          });
+
+          // Menampilkan 8 artikel pertama
+          let articleCount = 0;
+          for (let i = 0; i < 8 && i < articles.length; i++) {
+            const cardHtml = `
+              <div class="col-md-3">
+                <div class="card">
+                  <img src="${articles[i].urlToImage}" class="card-img-top" alt="${articles[i].title}">
+                  <div class="card-body">
+                    <h5 class="card-title">${articles[i].title}</h5>
+                    <p class="card-text">${articles[i].description}</p>
+                    <a href="${articles[i].url}" target="_blank" class="btn btn-primary">Baca Selengkapnya</a>
+                  </div>
+                </div>
+              </div>
+            `;
+            $("#news").append(cardHtml).hide().fadeIn();
+            articleCount++;
+          }
+
+          // Tampilkan tombol "Load More" jika ada artikel lainnya
+          if (articleCount < articles.length) {
+            $("#load-more").show();
+          }
+
+          // Ketika tombol "Load More" ditekan
+          $("#load-more button").click(function () {
+            // Tampilkan 20 artikel tambahan
+            for (let i = articleCount; i < articleCount + 20 && i < articles.length; i++) {
+              const cardHtml = `
+                <div class="col-md-3">
+                  <div class="card">
+                    <img src="${articles[i].urlToImage}" class="card-img-top" alt="${articles[i].title}">
+                    <div class="card-body">
+                <h5 class="card-title">${articles[i].title}</h5>
+                <p class="card-text">${articles[i].description}</p>
+                <a href="${articles[i].url}" target="_blank" class="btn btn-primary">Baca Selengkapnya</a>
+              </div>
+            </div>
+          `;
+              $("#news").append(cardHtml).hide().fadeIn();
+              articleCount++;
+            }
+
+            // Sembunyikan tombol "Load More" jika sudah tidak ada artikel lagi
+            if (articleCount >= articles.length) {
+              $("#load-more").hide();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

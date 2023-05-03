@@ -1,0 +1,239 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <!-- icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Artikel Teledoc</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg mb-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" alt="Logo" height="30" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dokter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notifikasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Artikel</a>
+            </li>
+          </ul>
+          <button class="navbar-extra btn btn-outline-primary" type="button">Masuk</button>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- search bar -->
+    <div class="search container mt-5">
+      <form class="form-inline d-flex">
+        <input class="form-control mr-sm-2" type="search" placeholder="Cari artikel berdasarkan judul, kategori, topik" aria-label="Search" />
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i data-feather="search"></i></button>
+      </form>
+    </div>
+    <!-- end search bar-->
+
+    <!-- artikel -->
+    <!-- topik terkini -->
+    <div class="topic-selection container">
+      <h3 class="mb-3">Topik Terkini:</h3>
+      <div class="btn-group d-flex flex-wrap" role="group">
+        <button type="button" class="topic btn btn-outline-primary mb-2">Diabetes</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Jantung</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Covid-19</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Reproduksi</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Anemia</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Kanker</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Gaya Hidup</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Stroke</button>
+        <button type="button" class="topic btn btn-outline-primary mb-2">Kehamilan</button>
+      </div>
+    </div>
+
+    <!-- artikel populer -->
+    <div class="popular container">
+      <h3>Artikel Terpopuler</h3>
+      <div class="row">
+        <a class="top col-lg-8" href="">
+          <div>
+            <div id="topArticle"></div>
+          </div>
+        </a>
+        <a class="other col-lg-4" href="">
+          <div>
+            <div id="otherArticles"></div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- artikel terbaru -->
+    <div class="container">
+      <h2 class="text-center mb-4">Artikel Terbaru</h2>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 1</h5>
+              <p class="card-text">Deskripsi artikel 1.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 2</h5>
+              <p class="card-text">Deskripsi artikel 2.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 3</h5>
+              <p class="card-text">Deskripsi artikel 3.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 4</h5>
+              <p class="card-text">Deskripsi artikel 4.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 5</h5>
+              <p class="card-text">Deskripsi artikel 5.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 6</h5>
+              <p class="card-text">Deskripsi artikel 6.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 5</h5>
+              <p class="card-text">Deskripsi artikel 5.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Artikel 5</h5>
+              <p class="card-text">Deskripsi artikel 5.</p>
+              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <a href="#" class="btn btn-primary">Selengkapnya</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end artikel -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footertele">
+        <div class="label-footer">
+          <a href="#" class="logofooter">
+            <a href="#"
+              ><img
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3uWk3BCOyW8-P-PqW9zAXEyHyz_vBjW0aGA8pSLiqlR79W88pLa36hFzGa6cnnEhCGUqEEfoAM9nmP9urx-d4gHCXk2AJO_0Qu4pPNltOG7tfonl6dfh20Fy_k5X0um7mVTehHAHGgewlmkqPlbo70Mca3RWmZ-Ol9rDHqIRajT7WoNe-oTbpdLc-Mg/s290/logo.png"
+                href="#"
+                alt="TeleDoc"
+                width="120"
+                height="38"
+            /></a>
+          </a>
+        </div>
+        <div class="sitemap-footer">
+          <h6>Site Map</h6>
+          <a id="link" href="https://skilvul.com" class="lkf">FAQ</a>
+          <a href="#" class="lkf">Blog</a>
+          <a href="#" class="lkf">Syarat & Ketentuan</a>
+          <a href="#" class="lkf">Kebijakan Privasi</a>
+          <a href="#" class="lkf">Promo</a>
+        </div>
+        <div class="sitemap-footer">
+          <h6>Hubungi Kami</h6>
+          <a href="#" class="lkf">Gedung TeleDoc, Jl HR Rasuna Said</a>
+          <a href="#" class="lkf">Kav. 832-33, Jakarta Selatan 12940</a>
+          <a href="#" class="lkf">Phone: +6283452678115</a>
+          <a href="#" class="lkf">Email: teledoc@gmail.com</a>
+        </div>
+      </div>
+      <div class="akhirfooter">
+        <h6>© TeleDoc,2023. ALL RIGHT RESERVED</h6>
+        <div class="icons">
+          <a href="#"><i data-feather="instagram"></i></a>
+          <a href="#"><i data-feather="facebook"></i></a>
+          <a href="#"><i data-feather="twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- script -->
+    <script src="assets/js/script.js"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
