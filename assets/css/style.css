@@ -4,23 +4,10 @@
   --white: #fffffff5;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-decoration: none;
-  max-width: 100%;
-}
-
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--white);
   color: var(--font);
-  /* padding-top: 4rem; */
-  max-height: 2000px;
-  width: 100%;
 }
 
 /*navbar*/
@@ -29,7 +16,6 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -48,8 +34,8 @@ body {
 .navbar .navbar-nav a {
   color: var(--font);
   display: inline-block;
-  font-size: 0.9rem;
-  margin: 1rem 1rem;
+  font-size: 16px;
+  margin: 16px 16px;
 }
 .navbar .navbar-nav a:hover {
   color: var(--primary);
@@ -57,8 +43,8 @@ body {
 .navbar .navbar-nav a::after {
   content: "";
   display: block;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid var(--primary);
+  padding-bottom: 8px;
+  border-bottom: 1.6px solid var(--primary);
   transform: scaleX(0);
   transition: 0.2s linier;
 }
@@ -84,20 +70,25 @@ body {
   text-decoration: none;
 }
 
+#otherArticles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #otherArticles .card {
   height: 69px;
 }
 
 #otherArticles .card-title {
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.2;
-  height: 2.4rem;
-  overflow: hidden;
+  height: 38px;
+  overflow: auto;
   text-overflow: ellipsis;
 }
 
 .footer {
-  margin-top: 8rem;
+  margin-top: 32px;
   background-color: #284450;
   color: white;
   width: 100%;
@@ -106,7 +97,7 @@ body {
 }
 .footertele {
   display: flex;
-  padding: 3rem 7%;
+  padding: 48px 7%;
   justify-content: space-around;
 }
 
@@ -117,7 +108,7 @@ body {
   font-size: 14px;
 }
 .icons-footer {
-  margin-top: 1rem;
+  margin-top: 16px;
 }
 .icons-footer .iconsf {
   color: white;
@@ -140,7 +131,7 @@ body {
   background-color: #1c3641;
   justify-content: space-around;
   border-top: 1px solid #ffffff;
-  padding: 1.4rem 7%;
+  padding: 22px 7%;
 }
 
 /* media query */
@@ -151,15 +142,27 @@ body {
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html {
-    font-size: 62.5%;
+    font-size: 75%;
   }
-  .navbarNav {
-    display: inline-block;
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    overflow-y: auto;
+    background-color: #ffffff;
+    padding: 16px;
+    display: none;
   }
-  .navbar {
-    height: 200px;
+  .navbar-collapse.show {
+    display: block;
+  }
+  #otherArticles .card-title {
+    overflow: visible;
   }
 }
 
@@ -168,13 +171,7 @@ body {
   html {
     font-size: 55%;
   }
-  .navbar {
-    height: 200px;
-  }
   .navbarNav {
     display: inline-block;
-  }
-  .navbar-extra {
-    display: none;
   }
 }
