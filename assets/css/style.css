@@ -64,6 +64,7 @@ body {
 .topic {
   margin-right: 10px;
 }
+
 /* artikel terpopuler */
 .top {
   text-decoration: none;
@@ -85,24 +86,26 @@ body {
   overflow: auto;
   text-overflow: ellipsis;
 }
+
 /* artikel terbaru */
 #article-card {
   margin: 10px;
   max-width: 260px;
 }
-
+#article-card .card-title {
+  font-weight: bold;
+}
 #article-card img {
   height: 150px;
   object-fit: cover;
 }
-
 #article-card .card-body {
   height: 200px;
   padding: 15px;
+  font-size: smaller;
   overflow: auto;
   text-overflow: ellipsis;
 }
-
 #load-more {
   margin-top: 20px;
 }

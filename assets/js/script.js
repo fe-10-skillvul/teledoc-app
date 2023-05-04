@@ -23,9 +23,9 @@ const renderTopArticle = async () => {
 
   const html = `
     <div class="card mb-3">
-      <img src="${urlToImage}" class="card-img-top" alt="${title}" height=600 width=867>
+      <img src="${urlToImage}" class="card-img-top" alt="${title}" style="height: 513px; width:735px;">
       <div class="card-body">
-        <h5 class="card-title"><a href='coba.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
+        <h5 class="card-title"><a class="text-decoration-none" href='coba.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
       </div>
     </div>
   `;
@@ -41,17 +41,17 @@ const renderOtherArticles = async () => {
   let html = "";
 
   otherArticles.forEach((article) => {
-    const { title, urlToImage } = article;
+    const { title, author, publishedAt, urlToImage, url, content } = article;
 
     html += `
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="${urlToImage}" class="img-fluid rounded-start" alt="${title}">
+            <img src="${urlToImage}" class="img-fluid rounded-start" alt="${title}" style="height: 66.38px; width:118px;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">${title}</h5>
+              <h5 class="card-title"><a class="text-decoration-none" href='coba.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</a></h5>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ function renderArticles(articles) {
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body");
 
-    const title = document.createElement("h5");
+    const title = document.createElement("h6");
     title.classList.add("card-title");
     title.textContent = article.title;
     cardBody.appendChild(title);
