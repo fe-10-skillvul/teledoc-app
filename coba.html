@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detail Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- Custom CSS -->
+    <style>
+      .card {
+        margin-bottom: 20px;
+      }
+      .subscribe-form input[type="email"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: vertical;
+      }
+      .subscribe-form input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .subscribe-form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .category-article {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .topic-selection {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .topic {
+        width: 150px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .card-img {
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Judul Artikel</h2>
+              <p class="card-text">Penulis Artikel</p>
+              <p class="card-text"><small class="text-muted">Tanggal dibuat: 4 Mei 2023</small></p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">Isi Artikel</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card subscribe-form">
+            <div class="card-body">
+              <h5 class="card-title">Berlangganan Artikel</h5>
+              <form>
+                <input type="email" id="email" name="email" placeholder="Masukkan alamat email Anda..." />
+                <br />
+                <input type="submit" value="Berlangganan" />
+              </form>
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">Kategori Artikel</h5>
+                  <div class="category-articles">
+                    <button type="button" class="topic btn btn-primary">Diabetes</button>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">Topik Terkini</h5>
+                  <div class="topic-selection">
+                    <button type="button" class="topic btn btn-outline-primary">Diabetes</button>
+                    <button type="button" class="topic btn btn-outline-primary">Jantung</button>
+                    <button type="button" class="topic btn btn-outline-primary">Covid-19</button>
+                    <button type="button" class="topic btn btn-outline-primary">Reproduksi</button>
+                    <button type="button" class="topic btn btn-outline-primary">Anemia</button>
+                    <button type="button" class="topic btn btn-outline-primary">Kanker</button>
+                    <button type="button" class="topic btn btn-outline-primary">Gaya Hidup</button>
+                    <button type="button" class="topic btn btn-outline-primary">Stroke</button>
+                    <button type="button" class="topic btn btn-outline-primary">Kehamilan</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">Artikel Terkait</h5>
+                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSliKT" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

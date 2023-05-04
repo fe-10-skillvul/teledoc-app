@@ -1,7 +1,7 @@
 // Script untuk mengambil data dari API NewsAPI
 
 // API endpoint
-const url = "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=bb2c3dd8bdb84cf9a75cba68741aa1ce";
+const url = "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=68b2606222714d07a71bdcc49bd9eef6";
 let pageNumber = 1;
 
 // Fungsi untuk mengambil data dari API
@@ -98,7 +98,6 @@ function renderArticles(articles) {
     articlesContainer.appendChild(card);
   });
 }
-
 
 // Fungsi untuk menampilkan artikel lainnya
 async function loadMoreArticles() {
