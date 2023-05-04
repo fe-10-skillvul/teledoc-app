@@ -1,5 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #255ED6;
+  margin: 50px 0;
+  padding: 40px;
+}
+
+#hero #hero-greeting h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#hero #hero-greeting p {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+#hero-button button {
+  color: #1890FF;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+}
+
+#hero-button button:hover {
+  background-color: #fff;
+}
+
 /* Spesialisasi Dokter */
 #spesialisasi {
   padding: 10px 0;
