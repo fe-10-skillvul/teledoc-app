@@ -1,3 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Spesialisasi Dokter */
+#spesialisasi {
+  padding: 10px 0;
+}
+
+#spesialisasi h2 {
+  font-size: 24px; 
+  font-weight: 800; 
+  padding: 20px;
+}
+
+#spesialisasi .row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  row-gap: 10px;
+  margin-top: 40px;
+}
+
+.spesialisasi-card {
+  flex: 1;
+  text-align: center; 
+  padding-left: 20px;
+}
+
+.spesialisasi-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px; 
+}
+
+.spesialisasi-card p {
+  font-size: 16px;
+  font-weight: 400; 
+}
+
+.spesialisasi-card img:hover {
+  cursor: pointer;
+}
+
+/* Media Query */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+      font-size: 75%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  #hero #hero-greeting h1 {
+    font-size: 24px;
+  }
+  
+  #hero #hero-greeting p {
+    font-size: 18px;
+  }
+  
+  #hero-button button {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  #spesialisasi .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .spesialisasi-card {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  #hero #hero-greeting h1 {
+    font-size: 24px;
+  }
+  
+  #hero #hero-greeting p {
+    font-size: 18px;
+  }
+  
+  #hero-button button {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+}
+
 :root {
   --primary: #255ed6;
   --font: #252424;
@@ -135,11 +238,6 @@ body {
 }
 
 /* media query */
-@media (max-width: 1366px) {
-  html {
-    font-size: 100%;
-  }
-}
 
 /* Tablet */
 @media (max-width: 768px) {
@@ -163,6 +261,33 @@ body {
   }
   #otherArticles .card-title {
     overflow: visible;
+  }
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  #hero #hero-greeting h1 {
+    font-size: 24px;
+  }
+  
+  #hero #hero-greeting p {
+    font-size: 18px;
+  }
+  
+  #hero-button button {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  #spesialisasi .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .spesialisasi-card {
+    width: 80%;
   }
 }
 
