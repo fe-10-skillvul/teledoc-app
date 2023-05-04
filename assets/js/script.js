@@ -19,13 +19,13 @@ const getNews = async () => {
 const renderTopArticle = async () => {
   const data = await getNews();
   const topArticle = data.articles[0];
-  const { title, description, urlToImage, url } = topArticle;
+  const { title, author, publishedAt, urlToImage, url, content } = topArticle;
 
   const html = `
     <div class="card mb-3">
       <img src="${urlToImage}" class="card-img-top" alt="${title}" height=600 width=867>
       <div class="card-body">
-        <h5 class="card-title">${title}</h5>
+        <h5 class="card-title"><a href='coba.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
       </div>
     </div>
   `;

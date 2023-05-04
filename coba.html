@@ -60,14 +60,14 @@
         <div class="col-lg-8">
           <div class="card">
             <div class="card-body">
-              <h2 class="card-title">Judul Artikel</h2>
-              <p class="card-text">Penulis Artikel</p>
-              <p class="card-text"><small class="text-muted">Tanggal dibuat: 4 Mei 2023</small></p>
+              <h2 class="card-title" id="judul_artikel"></h2>
+              <p class="card-text" id="penulis_artikel"></p>
+              <p class="card-text"><small class="text-muted" id="tanggal_artikel"></small></p>
             </div>
           </div>
           <div class="card">
             <div class="card-body">
-              <p class="card-text">Isi Artikel</p>
+              <p class="card-text" id="konten_artikel"></p>
             </div>
           </div>
         </div>
@@ -177,6 +177,21 @@
     </div>
 
     <!-- Bootstrap JS -->
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get("title");
+      const url = urlParams.get("url");
+      const author = urlParams.get("author");
+      const publishedAt = urlParams.get("publishedAt");
+      const content = urlParams.get("content");
+      const urlToImage = urlParams.get("urlToImage");
+      console.log(title);
+      console.log(url);
+      document.getElementById("judul_artikel").innerHTML = title;
+      document.getElementById("penulis_artikel").innerHTML = `Penulis: ${author}`;
+      document.getElementById("tanggal_artikel").innerHTML = `Tanggal dibuat: ${new Date(publishedAt).toLocaleDateString()}`;
+      document.getElementById("konten_artikel").innerHTML = content;
+    </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSliKT" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
