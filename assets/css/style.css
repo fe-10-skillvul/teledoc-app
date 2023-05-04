@@ -28,7 +28,7 @@
   margin-bottom: 5px;
 }
 
-#hero-button button{
+#hero-button button {
   color: #1890FF;
   font-weight: 600;
   padding: 10px 20px;
@@ -38,6 +38,47 @@
 
 #hero-button button:hover {
   background-color: #fff;
+}
+
+/* Spesialisasi Dokter */
+#spesialisasi {
+  padding: 10px 0;
+}
+
+#spesialisasi h2 {
+  font-size: 24px; 
+  font-weight: 800; 
+  padding: 20px;
+}
+
+#spesialisasi .row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.spesialisasi-card {
+  flex: 1;
+  text-align: center; 
+  padding-left: 20px;
+}
+
+.spesialisasi-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px; 
+}
+
+.spesialisasi-card p {
+  font-size: 16px;
+  font-weight: 400; 
+}
+
+.spesialisasi-card img:hover {
+  cursor: pointer;
 }
 
 /* Media Query */
@@ -59,6 +100,15 @@
   #hero-button button {
     font-size: 16px;
     margin-top: 20px;
+  }
+
+  #spesialisasi .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .spesialisasi-card {
+    width: 80%;
   }
 }
 
