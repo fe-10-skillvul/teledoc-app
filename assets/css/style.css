@@ -1,41 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 *{
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
 }
 
-main {
-  background-color: #255ED6;
-  margin: 50px 0;
+html {
+  scroll-behavior: smooth;
 }
 
-/* Hero */
+/* Hero Section */
 #hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #255ED6;
+  margin: 50px 0;
   padding: 40px;
 }
 
-#hero-greeting h1 {
+#hero #hero-greeting h1 {
   color: #fff;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
-#hero-greeting p {
+#hero #hero-greeting p {
   color: #fff;
-  font-weight: 400;
   margin-bottom: 5px;
 }
 
 #hero-button button {
-  color: #597EF7;
+  color: #1890FF;
+  font-weight: 600;
   padding: 10px 20px;
-  border-radius: 20px;
   border: none;
+  border-radius: 20px;
 }
 
 #hero-button button:hover {
