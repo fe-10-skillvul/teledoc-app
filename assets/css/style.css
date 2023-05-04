@@ -1,43 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 *{
-  margin: 0;
   padding: 0;
+  margin: 0;
   font-family: 'Inter', sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+main {
+  background-color: #255ED6;
+  margin: 50px 0;
 }
 
-/* Hero Section */
+/* Hero */
 #hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #255ED6;
-  margin: 50px 0;
   padding: 40px;
 }
 
-#hero #hero-greeting h1 {
+#hero-greeting h1 {
   color: #fff;
-  font-size: 30px;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
-#hero #hero-greeting p {
+#hero-greeting p {
   color: #fff;
+  font-weight: 400;
   margin-bottom: 5px;
 }
 
 #hero-button button {
-  color: #1890FF;
-  font-weight: 600;
+  color: #597EF7;
   padding: 10px 20px;
-  border: none;
   border-radius: 20px;
+  border: none;
 }
 
 #hero-button button:hover {
@@ -145,9 +143,202 @@ html {
   }
 }
 
-/* Mobile */
+:root {
+  --primary: #255ed6;
+  --font: #252424;
+  --white: #fffffff5;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+  color: var(--font);
+}
+
+/*navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  border-bottom: 1px solid var(--primary);
+  font-weight: bold;
+  font-size: 16px;
+  height: 70px;
+  width: 100%;
+}
+
+.navbar-logo {
+  align-items: flex-start;
+}
+
+.navbar .navbar-nav a {
+  color: var(--font);
+  display: inline-block;
+  font-size: 16px;
+  margin: 16px 16px;
+}
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 8px;
+  border-bottom: 1.6px solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linier;
+}
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+/* artikel */
+.search {
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.topic {
+  margin-right: 10px;
+}
+.top {
+  text-decoration: none;
+}
+
+.other {
+  text-decoration: none;
+}
+
+#otherArticles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#otherArticles .card {
+  height: 69px;
+}
+
+#otherArticles .card-title {
+  font-size: 16px;
+  line-height: 1.2;
+  height: 38px;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+.footer {
+  margin-top: 32px;
+  background-color: #284450;
+  color: white;
+  width: 100%;
+  bottom: 0;
+  flex-shrink: 0;
+}
+.footertele {
+  display: flex;
+  padding: 48px 7%;
+  justify-content: space-around;
+}
+
+.label-footer h6 {
+  color: white;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+}
+.icons-footer {
+  margin-top: 16px;
+}
+.icons-footer .iconsf {
+  color: white;
+}
+.sitemap-footer {
+  font-size: 24px;
+  font-weight: 700;
+}
+.sitemap-footer .lkf {
+  display: block;
+  font-size: 14px;
+  color: white;
+  font-weight: 300;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.akhirfooter {
+  margin-top: 10px;
+  display: flex;
+  background-color: #1c3641;
+  justify-content: space-around;
+  border-top: 1px solid #ffffff;
+  padding: 22px 7%;
+}
+
+/* media query */
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 75%;
+  }
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9998;
+    overflow-y: auto;
+    background-color: #ffffff;
+    padding: 16px;
+    display: none;
+  }
+  .navbar-collapse.show {
+    display: block;
+  }
+  #otherArticles .card-title {
+    overflow: visible;
+  }
+  #hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  
+  #hero #hero-greeting h1 {
+    font-size: 24px;
+  }
+  
+  #hero #hero-greeting p {
+    font-size: 18px;
+  }
+  
+  #hero-button button {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  #spesialisasi .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .spesialisasi-card {
+    width: 80%;
+  }
+}
+
+/* HP */
 @media (max-width: 450px) {
   html {
-      font-size: 55%;
+    font-size: 55%;
+  }
+  .navbarNav {
+    display: inline-block;
   }
 }
