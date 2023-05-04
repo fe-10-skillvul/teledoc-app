@@ -53,38 +53,58 @@ body {
 }
 
 /* artikel */
+/* search bar */
 .search {
   justify-content: center;
   align-items: center;
   margin-top: 100px;
 }
 
+/* topik terkini */
 .topic {
   margin-right: 10px;
 }
+/* artikel terpopuler */
 .top {
   text-decoration: none;
 }
-
 .other {
   text-decoration: none;
 }
-
 #otherArticles {
   display: flex;
   flex-wrap: wrap;
 }
-
 #otherArticles .card {
   height: 69px;
 }
-
 #otherArticles .card-title {
   font-size: 16px;
   line-height: 1.2;
   height: 38px;
   overflow: auto;
   text-overflow: ellipsis;
+}
+/* artikel terbaru */
+#article-card {
+  margin: 10px;
+  max-width: 260px;
+}
+
+#article-card img {
+  height: 150px;
+  object-fit: cover;
+}
+
+#article-card .card-body {
+  height: 200px;
+  padding: 15px;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+#load-more {
+  margin-top: 20px;
 }
 
 .footer {

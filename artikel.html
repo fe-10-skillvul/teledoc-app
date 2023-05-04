@@ -90,101 +90,17 @@
     </div>
 
     <!-- artikel terbaru -->
-    <div class="newArtikel container">
+    <div class="container">
       <h4 class="text-center mb-3">Artikel Terbaru</h4>
-      <div class="row">
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 1</h5>
-              <p class="card-text">Deskripsi artikel 1.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 2</h5>
-              <p class="card-text">Deskripsi artikel 2.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 3</h5>
-              <p class="card-text">Deskripsi artikel 3.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 4</h5>
-              <p class="card-text">Deskripsi artikel 4.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4" id="articles-container">
+        <!-- Artikel akan ditambahkan di sini -->
       </div>
       <div class="row">
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 5</h5>
-              <p class="card-text">Deskripsi artikel 5.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 6</h5>
-              <p class="card-text">Deskripsi artikel 6.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 5</h5>
-              <p class="card-text">Deskripsi artikel 5.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-4">
-          <div class="card">
-            <img src="https://via.placeholder.com/200x200" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Artikel 5</h5>
-              <p class="card-text">Deskripsi artikel 5.</p>
-              <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="text-center">
-            <a href="#" class="btn btn-primary">Selengkapnya</a>
-          </div>
+        <div class="col text-center">
+          <button class="btn btn-primary" id="load-more">Selengkapnya</button>
         </div>
       </div>
     </div>
-
     <!-- end artikel -->
 
     <!-- footer -->
@@ -192,14 +108,7 @@
       <div class="footertele">
         <div class="label-footer">
           <a href="#" class="logofooter">
-            <a href="#"
-              ><img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi3uWk3BCOyW8-P-PqW9zAXEyHyz_vBjW0aGA8pSLiqlR79W88pLa36hFzGa6cnnEhCGUqEEfoAM9nmP9urx-d4gHCXk2AJO_0Qu4pPNltOG7tfonl6dfh20Fy_k5X0um7mVTehHAHGgewlmkqPlbo70Mca3RWmZ-Ol9rDHqIRajT7WoNe-oTbpdLc-Mg/s290/logo.png"
-                href="#"
-                alt="TeleDoc"
-                width="120"
-                height="38"
-            /></a>
+            <a href="#"><img src="assets/img/logo.png" href="#" alt="TeleDoc" width="120" height="38" /></a>
           </a>
         </div>
         <div class="sitemap-footer">
@@ -230,7 +139,8 @@
     <!-- end footer -->
 
     <!-- script -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/artikelPopuler.js"></script>
+    <script src="assets/js/artikelBaru.js"></script>
     <script>
       feather.replace();
     </script>

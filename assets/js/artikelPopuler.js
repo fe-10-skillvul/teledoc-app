@@ -1,7 +1,7 @@
 // Script untuk mengambil data dari API NewsAPI
 
 // API endpoint
-const url = "https://newsapi.org/v2/top-headlines?country=id&category=health&apiKey=bb2c3dd8bdb84cf9a75cba68741aa1ce";
+const url = "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=bb2c3dd8bdb84cf9a75cba68741aa1ce";
 
 // Fungsi untuk mengambil data dari API
 const getNews = async () => {
@@ -22,7 +22,7 @@ const renderTopArticle = async () => {
 
   const html = `
     <div class="card mb-3">
-      <img src="https://via.placeholder.com/867x600" class="card-img-top" alt="${title}">
+      <img src="${urlToImage}" class="card-img-top" alt="${title}" height=600 width=867>
       <div class="card-body">
         <h5 class="card-title">${title}</h5>
       </div>
@@ -46,7 +46,7 @@ const renderOtherArticles = async () => {
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="https://via.placeholder.com/88x69" class="img-fluid rounded-start" alt="${title}">
+            <img src="${urlToImage}" class="img-fluid rounded-start" alt="${title}">
           </div>
           <div class="col-md-8">
             <div class="card-body">
