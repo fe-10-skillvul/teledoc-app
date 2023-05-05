@@ -53,9 +53,41 @@
         object-fit: cover;
       }
     </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="container">
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md mb-3 fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" alt="Logo" height="30" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dokter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notifikasi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Artikel</a>
+            </li>
+          </ul>
+          <button class="navbar-extra btn btn-outline-primary" type="button">Masuk</button>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- konten -->
+    <div class="container" style="margin-top: 80px">
       <div class="row">
         <div class="col-lg-8">
           <div class="card">
@@ -68,6 +100,7 @@
           <div class="card">
             <div class="card-body">
               <p class="card-text" id="konten_artikel"></p>
+              <p class="card-text" id="more_artikel"></p>
             </div>
           </div>
         </div>
@@ -191,6 +224,7 @@
       document.getElementById("penulis_artikel").innerHTML = `Penulis: ${author}`;
       document.getElementById("tanggal_artikel").innerHTML = `Tanggal dibuat: ${new Date(publishedAt).toLocaleDateString()}`;
       document.getElementById("konten_artikel").innerHTML = content;
+      document.getElementById("more_artikel").innerHTML = `Artikel selengkapnya dapat diakses melalui: <a href="${url}">${url}</a>`;
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSliKT" crossorigin="anonymous"></script>

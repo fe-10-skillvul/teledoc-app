@@ -23,9 +23,9 @@ const renderTopArticle = async () => {
 
   const html = `
     <div class="card mb-3">
-      <img src="${urlToImage}" class="card-img-top" alt="${title}" style="height: 513px; width:735px;">
+      <img src="${urlToImage}" class="card-img-top" alt="error" style="height: 513px; width:735px;">
       <div class="card-body">
-        <h5 class="card-title"><a class="text-decoration-none" href='coba.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
+        <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
       </div>
     </div>
   `;
@@ -47,11 +47,11 @@ const renderOtherArticles = async () => {
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="${urlToImage}" class="img-fluid rounded-start" alt="${title}" style="height: 66.38px; width:118px;">
+            <img src="${urlToImage}" class="img-fluid rounded-start" alt="error" style="height: 66.38px; width:118px;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title"><a class="text-decoration-none" href='coba.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</a></h5>
+              <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</a></h5>
             </div>
           </div>
         </div>
@@ -66,50 +66,37 @@ const renderOtherArticles = async () => {
 renderTopArticle();
 renderOtherArticles();
 
-// artikel terbaru
 // Fungsi untuk menampilkan artikel terbaru
-function renderArticles(articles) {
-  const articlesContainer = document.getElementById("articles-container");
+const rendernewArticles = (articles) => {
+  let html = "";
+
   articles.forEach((article) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-    card.setAttribute("id", "article-card");
+    const { title, author, publishedAt, urlToImage, url, content, description } = article;
 
-    const image = document.createElement("img");
-    image.src = article.urlToImage;
-    image.alt = article.title;
-    card.appendChild(image);
-
-    const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-
-    const title = document.createElement("h6");
-    title.classList.add("card-title");
-    title.textContent = article.title;
-    cardBody.appendChild(title);
-
-    const description = document.createElement("p");
-    description.classList.add("card-text");
-    description.textContent = article.description;
-    cardBody.appendChild(description);
-
-    card.appendChild(cardBody);
-
-    articlesContainer.appendChild(card);
+    html += `
+    <div class="card" id="article-card">
+      <img src="${urlToImage}" alt="error" />
+      <div class="card-body">
+        <h6 class="card-title"><a class="text-decoration-none" href="detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}">${title}</a></h6>
+      <p class="card-text">${description}</p>
+      </div>
+    </div>
+    `;
   });
-}
+
+  document.querySelector("#newArticle").innerHTML += html;
+};
 
 // Fungsi untuk menampilkan artikel lainnya
-async function loadMoreArticles() {
-  const response = await fetch(url);
-  const data = await response.json();
-  renderArticles(data.articles);
+const loadMoreArticles = async () => {
+  const data = await getNews(pageNumber);
+  const articles = data.articles.slice(0, 8);
+  rendernewArticles(articles);
   pageNumber++;
-}
+};
 
 // Memanggil fungsi artikel lainnya
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadMoreArticles();
   await loadMoreArticles();
   const loadMoreButton = document.getElementById("load-more");
   loadMoreButton.addEventListener("click", loadMoreArticles);
