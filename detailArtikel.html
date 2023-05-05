@@ -95,12 +95,15 @@
               <h2 class="card-title" id="judul_artikel"></h2>
               <p class="card-text" id="penulis_artikel"></p>
               <p class="card-text"><small class="text-muted" id="tanggal_artikel"></small></p>
+              <img src="" alt="Article image" id="artikel_gambar" style="width: 500px; height: 300px" />
             </div>
           </div>
           <div class="card">
             <div class="card-body">
               <p class="card-text" id="konten_artikel"></p>
               <p class="card-text" id="more_artikel"></p>
+              <button id="bookmark-btn" class="btn btn-outline-primary">Simpan Artikel</button>
+              <button id="list-bookmark-btn" class="btn btn-outline-secondary">Daftar Artikel yang Telah Disimpan</button>
             </div>
           </div>
         </div>
@@ -209,8 +212,43 @@
       </div>
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footertele">
+        <div class="label-footer">
+          <a href="#" class="logofooter">
+            <a href="#"><img src="assets/img/logo.png" href="#" alt="TeleDoc" width="120" height="38" /></a>
+          </a>
+        </div>
+        <div class="sitemap-footer">
+          <h6>Site Map</h6>
+          <a id="link" href="https://skilvul.com" class="lkf">FAQ</a>
+          <a href="#" class="lkf">Blog</a>
+          <a href="#" class="lkf">Syarat & Ketentuan</a>
+          <a href="#" class="lkf">Kebijakan Privasi</a>
+          <a href="#" class="lkf">Promo</a>
+        </div>
+        <div class="sitemap-footer">
+          <h6>Hubungi Kami</h6>
+          <a href="#" class="lkf">Gedung TeleDoc, Jl HR Rasuna Said</a>
+          <a href="#" class="lkf">Kav. 832-33, Jakarta Selatan 12940</a>
+          <a href="#" class="lkf">Phone: +6283452678115</a>
+          <a href="#" class="lkf">Email: teledoc@gmail.com</a>
+        </div>
+      </div>
+      <div class="akhirfooter">
+        <h6>© TeleDoc,2023. ALL RIGHT RESERVED</h6>
+        <div class="icons">
+          <a href="#"><i data-feather="instagram"></i></a>
+          <a href="#"><i data-feather="facebook"></i></a>
+          <a href="#"><i data-feather="twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+
     <script>
+      // Menampilkan Artikel
       const urlParams = new URLSearchParams(window.location.search);
       const title = urlParams.get("title");
       const url = urlParams.get("url");
@@ -225,6 +263,65 @@
       document.getElementById("tanggal_artikel").innerHTML = `Tanggal dibuat: ${new Date(publishedAt).toLocaleDateString()}`;
       document.getElementById("konten_artikel").innerHTML = content;
       document.getElementById("more_artikel").innerHTML = `Artikel selengkapnya dapat diakses melalui: <a href="${url}">${url}</a>`;
+      document.getElementById("artikel_gambar").setAttribute("src", urlToImage);
+
+      // Fitur bookmark
+      // get the bookmark button element
+      const bookmarkBtn = document.getElementById("bookmark-btn");
+
+      // get the list bookmark button element
+      const listBookmarkBtn = document.getElementById("list-bookmark-btn");
+      let articles = [];
+
+      // add event listener to the bookmark button
+      bookmarkBtn.addEventListener("click", function () {
+        // get the article title
+        let articleTitle = document.getElementById("judul_artikel").innerHTML;
+        articles.push(articleTitle);
+        console.log(articleTitle);
+
+        if (localStorage.getItem("bookmark") === articleTitle) {
+          // remove the bookmark
+          localStorage.removeItem("bookmark");
+
+          // update the bookmark button text
+          bookmarkBtn.innerText = "Simpan Artikel";
+
+          // show success message
+          alert("Bookmark removed!");
+        } else {
+          console.log(articles);
+          const jsonArray = JSON.stringify(articles);
+          // save the article title to local storage
+          localStorage.setItem("bookmark", jsonArray);
+
+          // update the bookmark button text
+          bookmarkBtn.innerText = "Artikel Telah Disimpan";
+
+          // show success message
+          alert("Article bookmarked!");
+        }
+      });
+
+      // add event listener to the list bookmark button
+      listBookmarkBtn.addEventListener("click", function () {
+        // redirect to bookmark list page
+        window.location.href = "list-bookmark.html";
+      });
+
+      // check if bookmark exists
+      if (localStorage.getItem("bookmark")) {
+        let dataBookmark = localStorage.getItem("bookmark");
+        console.log(dataBookmark);
+        // get the article title
+        const articleTitle = document.getElementById("judul_artikel").innerText;
+
+        // check if the stored bookmark matches the displayed article title
+        if (localStorage.getItem("bookmark") === articleTitle) {
+          // update the bookmark button text
+          bookmarkBtn.innerText = "Artikel Telah Disimpan";
+        }
+      }
     </script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSliKT" crossorigin="anonymous"></script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>List Bookmark</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1>Daftar Artikel yang Disimpan</h1>
+          <ul id="bookmark-list"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const bookmarkList = document.getElementById("bookmark-list");
+
+      const bookmarkedArticles = Object.values(localStorage);
+      console.log(bookmarkedArticles);
+
+      bookmarkedArticles.forEach(function (articleTitle) {
+        const listItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = `article.html?title=${encodeURIComponent(articleTitle)}`;
+        link.innerText = articleTitle;
+        listItem.appendChild(link);
+        bookmarkList.appendChild(listItem);
+      });
+    </script>
+  </body>
+</html>
