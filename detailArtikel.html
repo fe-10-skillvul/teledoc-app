@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detail Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- Custom CSS -->
+    <style>
+      .card {
+        margin-bottom: 20px;
+      }
+      .subscribe-form input[type='email'] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        font-size: 16px;
+        resize: vertical;
+      }
+      .subscribe-form input[type='submit'] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .subscribe-form input[type='submit']:hover {
+        background-color: #45a049;
+      }
+      .category-article {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .topic-selection {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .topic {
+        width: 150px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .card-img {
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md mb-3 fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/img/logo.png" alt="Logo" height="30" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Dokter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notifikasi</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="artikel.html">Artikel</a>
+            </li>
+          </ul>
+          <button class="navbar-extra btn btn-outline-primary" type="button">
+            Masuk
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- konten -->
+    <div class="container" style="margin-top: 80px">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title" id="judul_artikel"></h2>
+              <p class="card-text" id="penulis_artikel"></p>
+              <p class="card-text">
+                <small class="text-muted" id="tanggal_artikel"></small>
+              </p>
+              <img
+                src=""
+                alt="Article image"
+                id="artikel_gambar"
+                style="width: 500px; height: 300px"
+              />
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text" id="konten_artikel"></p>
+              <p class="card-text" id="more_artikel"></p>
+              <button id="bookmark-btn" class="btn btn-outline-primary">
+                Simpan Artikel
+              </button>
+              <button id="list-bookmark-btn" class="btn btn-outline-secondary">
+                Daftar Artikel yang Telah Disimpan
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card subscribe-form">
+            <div class="card-body">
+              <h5 class="card-title">Berlangganan Artikel</h5>
+              <form>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Masukkan alamat email Anda..."
+                />
+                <br />
+                <input type="submit" value="Berlangganan" />
+              </form>
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">Kategori Artikel</h5>
+                  <div class="category-articles">
+                    <button type="button" class="topic btn btn-primary">
+                      Diabetes
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">Topik Terkini</h5>
+                  <div class="topic-selection">
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Diabetes
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Jantung
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Covid-19
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Reproduksi
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Anemia
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Kanker
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Gaya Hidup
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Stroke
+                    </button>
+                    <button type="button" class="topic btn btn-outline-primary">
+                      Kehamilan
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt-4">
+                <div class="card-body">
+                  <h5 class="card-title mt-3">Artikel Terkait</h5>
+                  <div
+                    class="card mb-3 h-100"
+                    style="max-width: 540px; border: none"
+                  >
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img
+                          src="https://via.placeholder.com/196x100"
+                          class="card-img"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mb-3 h-100"
+                    style="max-width: 540px; border: none"
+                  >
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img
+                          src="https://via.placeholder.com/196x100"
+                          class="card-img"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mb-3 h-100"
+                    style="max-width: 540px; border: none"
+                  >
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img
+                          src="https://via.placeholder.com/196x100"
+                          class="card-img"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mb-3 h-100"
+                    style="max-width: 540px; border: none"
+                  >
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img
+                          src="https://via.placeholder.com/196x100"
+                          class="card-img"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="card mb-3 h-100"
+                    style="max-width: 540px; border: none"
+                  >
+                    <div class="row no-gutters">
+                      <div class="col-md-4">
+                        <img
+                          src="https://via.placeholder.com/196x100"
+                          class="card-img"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h6 class="card-title">Card title</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footertele">
+        <div class="label-footer">
+          <a href="#" class="logofooter">
+            <a href="#"
+              ><img
+                src="assets/img/logo.png"
+                href="#"
+                alt="TeleDoc"
+                width="120"
+                height="38"
+            /></a>
+          </a>
+        </div>
+        <div class="sitemap-footer">
+          <h6>Site Map</h6>
+          <a id="link" href="https://skilvul.com" class="lkf">FAQ</a>
+          <a href="#" class="lkf">Blog</a>
+          <a href="#" class="lkf">Syarat & Ketentuan</a>
+          <a href="#" class="lkf">Kebijakan Privasi</a>
+          <a href="#" class="lkf">Promo</a>
+        </div>
+        <div class="sitemap-footer">
+          <h6>Hubungi Kami</h6>
+          <a href="#" class="lkf">Gedung TeleDoc, Jl HR Rasuna Said</a>
+          <a href="#" class="lkf">Kav. 832-33, Jakarta Selatan 12940</a>
+          <a href="#" class="lkf">Phone: +6283452678115</a>
+          <a href="#" class="lkf">Email: teledoc@gmail.com</a>
+        </div>
+      </div>
+      <div class="akhirfooter">
+        <h6>© TeleDoc,2023. ALL RIGHT RESERVED</h6>
+        <div class="icons">
+          <a href="#"><i data-feather="instagram"></i></a>
+          <a href="#"><i data-feather="facebook"></i></a>
+          <a href="#"><i data-feather="twitter"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer -->
+
+    <script>
+      // Menampilkan Artikel
+      const urlParams = new URLSearchParams(window.location.search);
+      const title = urlParams.get('title');
+      const url = urlParams.get('url');
+      const author = urlParams.get('author');
+      const publishedAt = urlParams.get('publishedAt');
+      const content = urlParams.get('content');
+      const urlToImage = urlParams.get('urlToImage');
+      console.log(title);
+      console.log(url);
+      document.getElementById('judul_artikel').innerHTML = title;
+      document.getElementById(
+        'penulis_artikel'
+      ).innerHTML = `Penulis: ${author}`;
+      document.getElementById(
+        'tanggal_artikel'
+      ).innerHTML = `Tanggal dibuat: ${new Date(
+        publishedAt
+      ).toLocaleDateString()}`;
+      document.getElementById('konten_artikel').innerHTML = content;
+      document.getElementById(
+        'more_artikel'
+      ).innerHTML = `Artikel selengkapnya dapat diakses melalui: <a href="${url}">${url}</a>`;
+      document.getElementById('artikel_gambar').setAttribute('src', urlToImage);
+
+      // Fitur bookmark
+      // get the bookmark button element
+      const bookmarkBtn = document.getElementById('bookmark-btn');
+
+      // get the list bookmark button element
+      const listBookmarkBtn = document.getElementById("list-bookmark-btn");
+
+      const bookmarked = JSON.parse(localStorage.getItem("bookmark"));
+      console.log(bookmarked);
+
+      if (bookmarked != null) {
+        bookmarked.forEach((bookmark) => {
+          if (bookmark.title == title) {
+            bookmarkBtn.innerText = "Artikel Telah Disimpan";
+          }
+        });
+      }
+
+      // add event listener to the bookmark button
+      bookmarkBtn.addEventListener("click", function () {
+        // change text bookmark button to simpan and delete the data if user click innerText is 'Artikel Telah Disimpan'
+        if (bookmarkBtn.innerText === "Artikel Telah Disimpan") {
+          // get the article title
+          const articleTitle = document.getElementById("judul_artikel").innerText;
+
+          // get the bookmark data from local storage
+          let dataBookmark = JSON.parse(localStorage.getItem("bookmark"));
+
+          // loop through the bookmark data
+          dataBookmark.forEach((bookmark, index) => {
+            // check if the bookmark title matches the article title
+            if (bookmark.title === articleTitle) {
+              // remove the bookmark data from the array
+              dataBookmark.splice(index, 1);
+            }
+          });
+
+          // save the updated array to local storage
+          localStorage.setItem("bookmark", JSON.stringify(dataBookmark));
+
+          // change the button text
+          bookmarkBtn.innerText = "Simpan Artikel";
+        } else {
+          // check if any data is saved in local storage
+          if (localStorage.getItem("bookmark") == null) {
+            localStorage.setItem("bookmark", "[]");
+          }
+          // get old data from local storage and slap it into an array
+          let old_bookmarks = JSON.parse(localStorage.getItem("bookmark"));
+          old_bookmarks.push({ title: title });
+
+          // save the array to local storage
+          localStorage.setItem("bookmark", JSON.stringify(old_bookmarks));
+          // change button text
+          bookmarkBtn.innerText = "Artikel Telah Disimpan";
+
+          // show success message
+          alert('Article bookmarked!');
+        }
+      });
+
+      // add event listener to the list bookmark button
+      listBookmarkBtn.addEventListener('click', function () {
+        // redirect to bookmark list page
+        window.location.href = 'list-bookmark.html';
+      });
+
+      // check if bookmark exists
+      if (localStorage.getItem('bookmark')) {
+        let dataBookmark = localStorage.getItem('bookmark');
+        console.log(dataBookmark);
+        // get the article title
+        const articleTitle = document.getElementById('judul_artikel').innerText;
+
+        // check if the stored bookmark matches the displayed article title
+        if (localStorage.getItem('bookmark') === articleTitle) {
+          // update the bookmark button text
+          bookmarkBtn.innerText = 'Artikel Telah Disimpan';
+        }
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNSliKT"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
