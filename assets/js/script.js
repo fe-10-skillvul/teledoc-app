@@ -23,7 +23,7 @@ const renderTopArticle = async () => {
 
   const html = `
     <div class="card mb-3">
-      <img src="${urlToImage}" class="card-img-top" alt="error" style="height: 513px; width:735px;">
+      <img src="${urlToImage}" class="card-img-top" alt="error" style="height: auto; width:100%;">
       <div class="card-body">
         <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
       </div>
