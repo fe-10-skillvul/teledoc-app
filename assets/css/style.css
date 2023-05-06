@@ -57,7 +57,7 @@ html {
 } */
 
 .container-spesialisasi-dokter h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   /* padding: 20px; */
   line-height: 25px;
@@ -134,7 +134,7 @@ body {
 .container-dokter-tersedia h3 {
   margin: 0;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--font);
 }
 
@@ -239,7 +239,7 @@ body {
 
 .container-article h3 {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--font);
 }
 
@@ -269,8 +269,29 @@ body {
 }
 
 @media (max-width: 768px) {
-  .container-dokter-tersedia .d-flex h3,
-  .container-spesialisasi-dokter .d-flex h3 {
+  .container-spesialisasi-dokter h3 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+  #spesialisasi .row {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .spesialisasi-card {
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  .spesialisasi-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+  }
+  .spesialisasi-card p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .container-dokter-tersedia .d-flex h3 {
     font-size: 1.2rem;
   }
 
@@ -343,8 +364,25 @@ body {
 }
 
 @media (max-width: 450px) {
-  .container-dokter-tersedia h3,
   .container-spesialisasi-dokter h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .spesialisasi-card {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  .spesialisasi-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 3px;
+  }
+  .spesialisasi-card p {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .container-dokter-tersedia h3 {
     font-size: 100%;
   }
 
