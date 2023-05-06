@@ -67,7 +67,7 @@ renderTopArticle();
 renderOtherArticles();
 
 // Fungsi untuk menampilkan artikel terbaru
-const rendernewArticles = (articles, callback) => {
+const rendernewArticles = (articles) => {
   let html = "";
 
   articles.forEach((article) => {
@@ -85,7 +85,6 @@ const rendernewArticles = (articles, callback) => {
   });
 
   document.querySelector("#newArticle").innerHTML += html;
-  callback();
 };
 
 // Fungsi untuk menampilkan artikel lainnya

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
   --primary: #255ed6;
@@ -7,10 +6,10 @@
   --white: #fffffff5;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 html {
@@ -22,7 +21,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #255ED6;
+  background-color: #255ed6;
   margin: 50px 0;
   padding: 40px;
 }
@@ -40,7 +39,7 @@ html {
 }
 
 #hero-button button {
-  color: #1890FF;
+  color: #1890ff;
   font-weight: 600;
   padding: 10px 20px;
   border: none;
@@ -57,8 +56,8 @@ html {
 }
 
 #spesialisasi h2 {
-  font-size: 24px; 
-  font-weight: 800; 
+  font-size: 24px;
+  font-weight: 800;
   padding: 20px;
 }
 
@@ -72,7 +71,7 @@ html {
 
 .spesialisasi-card {
   flex: 1;
-  text-align: center; 
+  text-align: center;
   padding-left: 20px;
 }
 
@@ -81,12 +80,12 @@ html {
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
 }
 
 .spesialisasi-card p {
   font-size: 16px;
-  font-weight: 400; 
+  font-weight: 400;
 }
 
 .spesialisasi-card img:hover {
@@ -97,7 +96,7 @@ html {
 /* Laptop */
 @media (max-width: 1366px) {
   html {
-      font-size: 75%;
+    font-size: 75%;
   }
 }
 
@@ -107,15 +106,15 @@ html {
     text-align: center;
     padding: 30px;
   }
-  
+
   #hero #hero-greeting h1 {
     font-size: 24px;
   }
-  
+
   #hero #hero-greeting p {
     font-size: 18px;
   }
-  
+
   #hero-button button {
     font-size: 16px;
     margin-top: 20px;
@@ -125,7 +124,7 @@ html {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .spesialisasi-card {
     width: 80%;
   }
@@ -137,15 +136,15 @@ html {
     text-align: center;
     padding: 30px;
   }
-  
+
   #hero #hero-greeting h1 {
     font-size: 24px;
   }
-  
+
   #hero #hero-greeting p {
     font-size: 18px;
   }
-  
+
   #hero-button button {
     font-size: 16px;
     margin-top: 20px;
@@ -346,7 +345,7 @@ body {
 /* media query */
 @media (max-width: 1366px) {
   html {
-      font-size: 75%;
+    font-size: 75%;
   }
 }
 
@@ -395,11 +394,12 @@ body {
 }
 
 /* HP */
-@media (max-width: 450px) {
-  html {
-    font-size: 55%;
-  }
-  .navbarNav {
-    display: inline-block;
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+    .navbarNav {
+      display: inline-block;
+    }
   }
 }
