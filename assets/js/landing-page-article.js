@@ -6,7 +6,7 @@ const renderArticle = async () => {
   const response = await fetch(articleUrl);
   const data = await response.json();
 
-  const articles = data.articles.slice(2, 6);
+  const articles = data.articles.slice(0, 4);
 
   const articleContainer = document.querySelector("#card-article");
 
@@ -18,21 +18,25 @@ const renderArticle = async () => {
     const shortTitle =
       trimTitle.length < title.length ? trimTitle + "..." : trimTitle;
 
+    const maxDescriptionLength = 12;
+    const trimDescription = description.split(" ").slice(0, 12).join(" ");
+    const shortDescription = trimDescription.length < description.length ? trimDescription + "..." : trimDescription;
+
     articleCard = `
     <div class="col-md mt-sm-3">        
-    <div class="card card-height">
-    <a href="${url}" class="card-article text-decoration-none">
+    <div id="card-article" class="card card-height">
+    <a href="${url}" class="card-article text-decoration-none" >
           <img
             src="${urlToImage}"
-            class="card-img-top"
-            alt="${title}" height=150 width=867
+            class="card-img-top" style="height: 150px"
+            alt="${title}"
           />
           <div class="card-body">
-          <div class="badge bg-primary text-wrap fw-light p-1 mb-2" style="width: auto fw-light">
+          <div class="badge text-wrap mb-1">
           Makanan Sehat
         </div>
             <h5 class="card-title">${shortTitle}</h5>
-            <p class="card-text">${description}</p>
+            <p class="card-text">${shortDescription}</p>
           </div>
           </a>
           </div>
