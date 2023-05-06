@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+
+:root {
+  --primary: #255ed6;
+   --light-blue: #1890FF;
+  --font: #252424;
+  --white: #fffffff5;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -417,13 +425,6 @@ body {
   }
 }
 
-:root {
-  --primary: #255ed6;
-  --light-blue: #1890FF;
-  --font: #252424;
-  --white: #fffffff5;
-}
-
 body {
   font-family: "Inter", sans-serif;
   background-color: var(--white);
@@ -435,7 +436,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #e5e5e5;
   top: 0;
   left: 0;
   right: 0;
@@ -471,7 +472,67 @@ body {
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(0.5);
 }
+.navbar-nav .active > .nav-link {
+  color: #007bff;
+}
 
+/* artikel */
+/* search bar */
+.search {
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+/* topik terkini */
+.topic {
+  margin-right: 10px;
+}
+
+/* artikel terpopuler */
+.top {
+  text-decoration: none;
+}
+.other {
+  text-decoration: none;
+}
+#otherArticles {
+  display: flex;
+  flex-wrap: wrap;
+}
+#otherArticles .card {
+  height: 69px;
+}
+#otherArticles .card-title {
+  font-size: 16px;
+  line-height: 1.2;
+  height: 38px;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+/* artikel terbaru */
+#article-card {
+  margin: 10px;
+  max-width: 260px;
+}
+#article-card .card-title {
+  font-weight: bold;
+}
+#article-card img {
+  height: 150px;
+  object-fit: cover;
+}
+#article-card .card-body {
+  height: 200px;
+  padding: 15px;
+  font-size: smaller;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+#load-more {
+  margin-top: 20px;
+}
 
 /* artikel */
 .search {
@@ -563,7 +624,7 @@ body {
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html {
     font-size: 75%;
   }
@@ -597,40 +658,12 @@ body {
     background-color: #ffffff;
     padding: 16px;
     display: none;
-  } */
+  }
   .navbar-collapse.show {
     display: block;
   }
-
   #otherArticles .card-title {
     overflow: visible;
-  }
-  #hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px;
-  }
-  
-  #hero #hero-greeting h1 {
-    font-size: 24px;
-  }
-  
-  #hero #hero-greeting p {
-    font-size: 18px;
-  }
-  
-  #hero-button button {
-    font-size: 16px;
-    margin-top: 20px;
-  }
-
-  #spesialisasi .row {
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .spesialisasi-card {
-    width: 80%;
   }
 }
 
