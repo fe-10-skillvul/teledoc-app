@@ -187,20 +187,45 @@
     <script>
       // Menampilkan Artikel
       const urlParams = new URLSearchParams(window.location.search);
-      const title = urlParams.get("title");
-      const url = urlParams.get("url");
-      const author = urlParams.get("author");
-      const publishedAt = urlParams.get("publishedAt");
-      const content = urlParams.get("content");
-      const urlToImage = urlParams.get("urlToImage");
-      console.log(title);
-      console.log(url);
+      let title = urlParams.get("title");
+      if (title === "null") {
+        title = "Judul tidak Tersedia";
+      }
+
+      let url = urlParams.get("url");
+      if (url === "null") {
+        url = "https://loremipsum.com";
+      }
+
+      let author = urlParams.get("author");
+      if (author === "null") {
+        author = "John-Doe";
+      }
+
+      let publishedAt = urlParams.get("publishetAt");
+      if (publishedAt === "null") {
+        publishedAt = new Date().toISOString();
+      }
+
+      let content = urlParams.get("content");
+      if (content === "null") {
+        content = "Konten tidak tersedia";
+      }
+      let urlToImage = urlParams.get("urlToImage");
+      if (urlToImage === "null" || !urlToImage) {
+        urlToImage = "https://picsum.photos/500/300";
+      }
+
       document.getElementById("judul_artikel").innerHTML = title;
       document.getElementById("penulis_artikel").innerHTML = `Penulis: ${author}`;
       document.getElementById("tanggal_artikel").innerHTML = `Tanggal dibuat: ${new Date(publishedAt).toLocaleDateString()}`;
       document.getElementById("konten_artikel").innerHTML = content;
       document.getElementById("more_artikel").innerHTML = `Artikel selengkapnya dapat diakses melalui: <a href="${url}">${url}</a>`;
       document.getElementById("artikel_gambar").setAttribute("src", urlToImage);
+
+
+
+
 
       // Fitur bookmark
       // get the bookmark button element
