@@ -336,9 +336,9 @@ body {
     font-size: 75%;
   }
 
-  .card-text {
+  /* .card-text {
     font-size: 75%;
-  }
+  } */
 }
 
 @media (max-width: 450px) {
@@ -368,9 +368,9 @@ body {
 /* Media Query */
 /* Laptop */
 @media (max-width: 1366px) {
-  /* html {
+  html {
     font-size: 75%;
-  } */
+  }
 }
 
 @media only screen and (max-width: 768px) {
