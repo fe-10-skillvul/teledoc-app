@@ -118,7 +118,7 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #f9f8f8;
+  background-color: var(--white);
   color: var(--font);
   max-height: 2000px;
   width: 100%;
@@ -194,7 +194,6 @@ body {
 }
 
 /* ARTIKEL */
-
 .card-height {
   height: 100%;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
@@ -438,7 +437,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F9F8F8;
+  background-color: var(--white);
   top: 0;
   left: 0;
   right: 0;
@@ -626,7 +625,7 @@ body {
 }
 
 /* Tablet */
-@media (max-width: 767px) {
+@media screen and (max-width: 768px) {
   html {
     font-size: 75%;
   }
@@ -649,27 +648,25 @@ body {
   .navbar-nav a {
     margin: 8px 0;
   }
-  /* .navbar-collapse {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 9998;
-    overflow-y: auto;
-    background-color: #ffffff;
-    padding: 16px;
-    display: none;
+  #otherArticles .card {
+    height: auto;
+    margin-bottom: 15px;
   }
-  .navbar-collapse.show {
-    display: block;
-  }
-  #otherArticles .card-title {
-    overflow: visible;
-  }
-}
 
-/* HP */
+  #otherArticles .card-img-top {
+    height: 100px;
+  }
+
+  #otherArticles .card-body {
+    padding: 5px;
+  }
+
+  #otherArticles .card-title {
+    font-size: 14px;
+    height: 44px;
+  }
+
+  /* HP */
   @media (max-width: 450px) {
     html {
       font-size: 55%;
@@ -677,5 +674,43 @@ body {
     .navbarNav {
       display: inline-block;
     }
+    #otherArticles .card-img-top {
+      height: 80px;
+    }
+
+    #otherArticles .card-title {
+      font-size: 12px;
+      height: 34px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .footertele {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .sitemap-footer {
+    margin: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footertele {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sitemap-footer {
+    margin: 10px 0;
+  }
+  .akhirfooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .icons {
+    margin-top: 10px;
   }
 }
