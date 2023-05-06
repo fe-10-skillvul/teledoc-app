@@ -23,7 +23,7 @@ html {
   justify-content: space-between;
   align-items: center;
   background-color: #255ed6;
-  margin: 50px 0;
+  margin: 65px 0;
   padding: 40px;
 }
 
@@ -371,7 +371,7 @@ body {
 /* Laptop */
 @media (max-width: 1366px) {
   html {
-    font-size: 75%;
+    font-size: 90%;
   }
 }
 
@@ -515,7 +515,7 @@ body {
 /* artikel terbaru */
 #article-card {
   margin: 10px;
-  max-width: 260px;
+  max-width: 258px;
 }
 #article-card .card-title {
   font-weight: bold;
@@ -618,11 +618,6 @@ body {
 }
 
 /* media query */
-@media (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-}
 
 /* Tablet */
 @media screen and (max-width: 768px) {

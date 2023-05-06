@@ -25,7 +25,7 @@ const renderTopArticle = async () => {
     <div class="card mb-3">
       <img src="${urlToImage}" class="card-img-top" alt="error" style="height: auto; width:100%;">
       <div class="card-body">
-        <h4 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h4>
+        <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
       </div>
     </div>
   `;
@@ -47,7 +47,7 @@ const renderOtherArticles = async () => {
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="${urlToImage}" class="img-fluid rounded-start" alt="error" style="height: 66.38px; width:118px;">
+          <img src="${urlToImage}" onerror="this.onerror=null;this.src='https://picsum.photos/66/118';" class="img-fluid rounded-start" alt="error" style="height: 66.38px; width:118px;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -59,7 +59,7 @@ const renderOtherArticles = async () => {
     `;
   });
 
-  document.querySelector("#otherArticles").innerHTML = html;
+  document.getElementById("otherArticles").innerHTML = html;
 };
 
 // Memanggil fungsi untuk menampilkan artikel
@@ -77,8 +77,8 @@ const rendernewArticles = (articles) => {
     <div class="card" id="article-card">
       <img src="${urlToImage}" alt="error" />
       <div class="card-body">
-        <h5 class="card-title"><a class="text-decoration-none" href="detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}">${title}</a></h5>
-      <p class="card-text" style="font-size:13px">${description}</p>
+        <h6 class="card-title"><a class="text-decoration-none" href="detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}">${title}</a></h6>
+      <p class="card-text">${description}</p>
       </div>
     </div>
     `;
