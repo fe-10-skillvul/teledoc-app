@@ -2,7 +2,7 @@
 
 :root {
   --primary: #255ed6;
-   --light-blue: #1890FF;
+  --light-blue: #1890FF;
   --font: #252424;
   --white: #fffffff5;
 }
@@ -57,7 +57,7 @@ html {
 } */
 
 .container-spesialisasi-dokter h3 {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 600;
   /* padding: 20px; */
   line-height: 25px;
@@ -134,7 +134,7 @@ body {
 .container-dokter-tersedia h3 {
   margin: 0;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--font);
 }
 
@@ -244,7 +244,7 @@ body {
 
 .container-article h3 {
   font-weight: 600;
-  font-size: 32px;
+  font-size: 28px;
   color: var(--font);
 }
 
