@@ -67,7 +67,7 @@ renderTopArticle();
 renderOtherArticles();
 
 // Fungsi untuk menampilkan artikel terbaru
-const rendernewArticles = (articles) => {
+const rendernewArticles = (articles, callback) => {
   let html = "";
 
   articles.forEach((article) => {
@@ -85,14 +85,19 @@ const rendernewArticles = (articles) => {
   });
 
   document.querySelector("#newArticle").innerHTML += html;
+  callback();
 };
 
 // Fungsi untuk menampilkan artikel lainnya
 const loadMoreArticles = async () => {
   const data = await getNews(pageNumber);
   const articles = data.articles.slice(0, 8);
-  rendernewArticles(articles);
-  pageNumber++;
+
+  // Callback untuk menampilkan artikel setelah data berhasil diambil
+  rendernewArticles(articles, () => {
+    // Setelah artikel berhasil ditampilkan, increment pageNumber
+    pageNumber++;
+  });
 };
 
 // Memanggil fungsi artikel lainnya

@@ -67,8 +67,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Beranda</a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Dokter</a>
@@ -76,8 +76,8 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Notifikasi</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Artikel</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="artikel.html">Artikel</a>
             </li>
           </ul>
           <button class="navbar-extra btn btn-outline-primary" type="button">Masuk</button>
@@ -94,7 +94,9 @@
             <div class="card-body">
               <h2 class="card-title" id="judul_artikel"></h2>
               <p class="card-text" id="penulis_artikel"></p>
-              <p class="card-text"><small class="text-muted" id="tanggal_artikel"></small></p>
+              <p class="card-text">
+                <small class="text-muted" id="tanggal_artikel"></small>
+              </p>
               <img src="" alt="Article image" id="artikel_gambar" style="width: 500px; height: 300px" />
             </div>
           </div>
@@ -271,31 +273,54 @@
 
       // get the list bookmark button element
       const listBookmarkBtn = document.getElementById("list-bookmark-btn");
-      let articles = [];
+
+      const bookmarked = JSON.parse(localStorage.getItem("bookmark"));
+      console.log(bookmarked);
+
+      if (bookmarked != null) {
+        bookmarked.forEach((bookmark) => {
+          if (bookmark.title == title) {
+            bookmarkBtn.innerText = "Artikel Telah Disimpan";
+          }
+        });
+      }
 
       // add event listener to the bookmark button
       bookmarkBtn.addEventListener("click", function () {
-        // get the article title
-        let articleTitle = document.getElementById("judul_artikel").innerHTML;
-        articles.push(articleTitle);
-        console.log(articleTitle);
+        // change text bookmark button to simpan and delete the data if user click innerText is 'Artikel Telah Disimpan'
+        if (bookmarkBtn.innerText === "Artikel Telah Disimpan") {
+          // get the article title
+          const articleTitle = document.getElementById("judul_artikel").innerText;
 
-        if (localStorage.getItem("bookmark") === articleTitle) {
-          // remove the bookmark
-          localStorage.removeItem("bookmark");
+          // get the bookmark data from local storage
+          let dataBookmark = JSON.parse(localStorage.getItem("bookmark"));
 
-          // update the bookmark button text
+          // loop through the bookmark data
+          dataBookmark.forEach((bookmark, index) => {
+            // check if the bookmark title matches the article title
+            if (bookmark.title === articleTitle) {
+              // remove the bookmark data from the array
+              dataBookmark.splice(index, 1);
+            }
+          });
+
+          // save the updated array to local storage
+          localStorage.setItem("bookmark", JSON.stringify(dataBookmark));
+
+          // change the button text
           bookmarkBtn.innerText = "Simpan Artikel";
-
-          // show success message
-          alert("Bookmark removed!");
         } else {
-          console.log(articles);
-          const jsonArray = JSON.stringify(articles);
-          // save the article title to local storage
-          localStorage.setItem("bookmark", jsonArray);
+          // check if any data is saved in local storage
+          if (localStorage.getItem("bookmark") == null) {
+            localStorage.setItem("bookmark", "[]");
+          }
+          // get old data from local storage and slap it into an array
+          let old_bookmarks = JSON.parse(localStorage.getItem("bookmark"));
+          old_bookmarks.push({ title: title });
 
-          // update the bookmark button text
+          // save the array to local storage
+          localStorage.setItem("bookmark", JSON.stringify(old_bookmarks));
+          // change button text
           bookmarkBtn.innerText = "Artikel Telah Disimpan";
 
           // show success message

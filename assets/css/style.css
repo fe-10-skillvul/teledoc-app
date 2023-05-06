@@ -1,7 +1,7 @@
 :root {
   --primary: #255ed6;
   --font: #252424;
-  --white: #fffffff5;
+  --white: #e5e5e5;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #e5e5e5;
   top: 0;
   left: 0;
   right: 0;
@@ -50,6 +50,9 @@ body {
 }
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(0.5);
+}
+.navbar-nav .active > .nav-link {
+  color: #007bff;
 }
 
 /* artikel */
