@@ -50,9 +50,7 @@ const renderOtherArticles = async () => {
             <img src="${urlToImage}" class="img-fluid rounded-start" alt="error" style="height: 66.38px; width:118px;">
           </div>
           <div class="col-md-8">
-            <div class="card-body">
               <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</a></h5>
-            </div>
           </div>
         </div>
       </div>
