@@ -22,8 +22,8 @@ const renderTopArticle = async () => {
   const { title, author, publishedAt, urlToImage, url, content } = topArticle;
 
   const html = `
-    <div class="card mb-3">
-      <img src="${urlToImage}" class="card-img-top" alt="error" style="height: 513px; width:735px;">
+    <div class="card mb-3 top-article" style="height: 100%;">
+      <img src="${urlToImage}" class="card-img-top" alt="error" style="height: auto; width:100%;">
       <div class="card-body">
         <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
       </div>
@@ -42,16 +42,18 @@ const renderOtherArticles = async () => {
 
   otherArticles.forEach((article) => {
     const { title, author, publishedAt, urlToImage, url, content } = article;
+    const imageUrl = urlToImage || "https://picsum.photos/500/300";
 
     html += `
-      <div class="card mb-3">
+      <div class="card mb-3" top-article" style="height: 100%;">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="${urlToImage}" class="img-fluid rounded-start" alt="error" style="height: 66.38px; width:118px;">
+            <img src="${imageUrl}" class="img-fluid rounded-start" alt="${title}" style="height: 100%;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</a></h5>
+              
             </div>
           </div>
         </div>
@@ -59,7 +61,7 @@ const renderOtherArticles = async () => {
     `;
   });
 
-  document.querySelector("#otherArticles").innerHTML = html;
+  document.getElementById("otherArticles").innerHTML = html;
 };
 
 // Memanggil fungsi untuk menampilkan artikel
@@ -73,9 +75,11 @@ const rendernewArticles = (articles) => {
   articles.forEach((article) => {
     const { title, author, publishedAt, urlToImage, url, content, description } = article;
 
+    const imageUrl = urlToImage ? urlToImage : "https://picsum.photos/500/300.jpg";
+
     html += `
     <div class="card" id="article-card">
-      <img src="${urlToImage}" alt="error" />
+      <img src="${imageUrl}" alt="error"/>
       <div class="card-body">
         <h6 class="card-title"><a class="text-decoration-none" href="detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}">${title}</a></h6>
       <p class="card-text">${description}</p>
