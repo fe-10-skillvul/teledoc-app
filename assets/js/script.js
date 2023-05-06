@@ -25,7 +25,7 @@ const renderTopArticle = async () => {
     <div class="card mb-3">
       <img src="${urlToImage}" class="card-img-top" alt="error" style="height: auto; width:100%;">
       <div class="card-body">
-        <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
+        <h4 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h4>
       </div>
     </div>
   `;
@@ -77,8 +77,8 @@ const rendernewArticles = (articles) => {
     <div class="card" id="article-card">
       <img src="${urlToImage}" alt="error" />
       <div class="card-body">
-        <h6 class="card-title"><a class="text-decoration-none" href="detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}">${title}</a></h6>
-      <p class="card-text">${description}</p>
+        <h5 class="card-title"><a class="text-decoration-none" href="detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}">${title}</a></h5>
+      <p class="card-text" style="font-size:13px">${description}</p>
       </div>
     </div>
     `;
