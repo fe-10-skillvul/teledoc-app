@@ -253,12 +253,7 @@
           }
           // get old data from local storage and slap it into an array
           let old_bookmarks = JSON.parse(localStorage.getItem("bookmark"));
-          old_bookmarks.push({ title: title,
-          tanggal_artikel: articleDate,
-            penulis_artikel: articleAuthor,
-            artikel_gambar: articleImage,
-            konten_artikel: articleContent,
-            more_artikel: moreArticle });
+          old_bookmarks.push({ title: title});
 
           // save the array to local storage
           localStorage.setItem("bookmark", JSON.stringify(old_bookmarks));
