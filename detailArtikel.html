@@ -142,71 +142,6 @@
                   </div>
                 </div>
               </div>
-
-              <div class="card mt-4">
-                <div class="card-body">
-                  <h5 class="card-title mt-3">Artikel Terkait</h5>
-                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h6 class="card-title">Card title</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h6 class="card-title">Card title</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h6 class="card-title">Card title</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h6 class="card-title">Card title</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card mb-3 h-100" style="max-width: 540px; border: none">
-                    <div class="row no-gutters">
-                      <div class="col-md-4">
-                        <img src="https://via.placeholder.com/196x100" class="card-img" alt="..." />
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body">
-                          <h6 class="card-title">Card title</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -291,6 +226,8 @@
         if (bookmarkBtn.innerText === "Artikel Telah Disimpan") {
           // get the article title
           const articleTitle = document.getElementById("judul_artikel").innerText;
+          
+          
 
           // get the bookmark data from local storage
           let dataBookmark = JSON.parse(localStorage.getItem("bookmark"));
@@ -316,7 +253,12 @@
           }
           // get old data from local storage and slap it into an array
           let old_bookmarks = JSON.parse(localStorage.getItem("bookmark"));
-          old_bookmarks.push({ title: title });
+          old_bookmarks.push({ title: title,
+          tanggal_artikel: articleDate,
+            penulis_artikel: articleAuthor,
+            artikel_gambar: articleImage,
+            konten_artikel: articleContent,
+            more_artikel: moreArticle });
 
           // save the array to local storage
           localStorage.setItem("bookmark", JSON.stringify(old_bookmarks));
@@ -338,8 +280,10 @@
       if (localStorage.getItem("bookmark")) {
         let dataBookmark = localStorage.getItem("bookmark");
         console.log(dataBookmark);
-        // get the article title
-        const articleTitle = document.getElementById("judul_artikel").innerText;
+
+        // get the article data
+        const articleTitle = document.getElementById('judul_artikel').innerText;
+
 
         // check if the stored bookmark matches the displayed article title
         if (localStorage.getItem("bookmark") === articleTitle) {
