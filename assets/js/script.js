@@ -22,7 +22,7 @@ const renderTopArticle = async () => {
   const { title, author, publishedAt, urlToImage, url, content } = topArticle;
 
   const html = `
-    <div class="card mb-3">
+    <div class="card mb-3 top-article" style="height: 100%;">
       <img src="${urlToImage}" class="card-img-top" alt="error" style="height: auto; width:100%;">
       <div class="card-body">
         <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</h5>
@@ -45,7 +45,7 @@ const renderOtherArticles = async () => {
     const imageUrl = urlToImage || "https://picsum.photos/500/300";
 
     html += `
-      <div class="card mb-3" style="height: 100%;">
+      <div class="card mb-3" top-article" style="height: 100%;">
         <div class="row g-0">
           <div class="col-md-4">
             <img src="${imageUrl}" class="img-fluid rounded-start" alt="${title}" style="height: 100%;">
@@ -53,6 +53,7 @@ const renderOtherArticles = async () => {
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title"><a class="text-decoration-none" href='detailArtikel.html?title=${title}&url=${url}&author=${author}&publishedAt=${publishedAt}&content=${content}&urlToImage=${urlToImage}'>${title}</a></h5>
+              
             </div>
           </div>
         </div>
