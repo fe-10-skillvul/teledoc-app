@@ -31,6 +31,7 @@
         <a class="navbar-brand" href="#">
           <img src="assets/img/logo.png" alt="Logo" height="30" />
         </a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -42,7 +43,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Beranda</a>
+              <a class="nav-link" href="index.html">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Dokter</a>
@@ -51,7 +52,7 @@
               <a class="nav-link" href="#">Notifikasi</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Artikel</a>
+              <a class="nav-link" href="artikel.html">Artikel</a>
             </li>
           </ul>
           <button class="navbar-extra btn btn-outline-primary" type="button">
@@ -87,10 +88,10 @@
       <!-- Hero Section End -->
     </main>
 
-    <!-- Spesialisasi Section -->
-    <section id="spesialisasi">
+    <!-- Spesialisasi Dokter -->
+    <div class="container-dokter-tersedia mb-4">
         <div class="d-flex justify-content-between align-items-center">
-            <h2>Spesialisasi Dokter</h2>
+            <h3>Spesialisasi Dokter</h3>
             <a href="" class="text-decoration-none">Lihat Semua</a>
           </div>
 
@@ -145,9 +146,9 @@
                 <img src="https://i.ibb.co/wSMncJw/diabetes-care.webp" alt="spesialisasi-8">        
                 <p class="spesialisasi-card-p">Perawatan Diabetes</p>
                 </div> -->
+            </div>
         </div>
-        </section>
-        <!-- Spesialisasi Section End -->
+        <!-- Spesialisasi Dokter End -->
 
     <!-- Dokter Tersedia -->
     <div class="container-dokter-tersedia mb-4">
@@ -156,9 +157,80 @@
         <a href="" class="text-decoration-none">Lihat Semua</a>
       </div>
 
-      <div id="card-doctor" class="row text-start g-0"></div>
+      <div id="col-doctor" class="col-md mt-sm-3">
+        <div id="doctor-card" class="card card-sm-1 text-bg-dark">
+          <img src="assets/img/dokter/doctor1.png" class="card-img-top" alt="" />
+          <div class="card-img-overlay p-2">
+            <h2 id="doctor-name" class="card-title">dr. Serena Gome</h2>
+            <p id="spesialisasi-text" class="card-text m-1">Dokter Umum</p>
+            <p id="place-title" class="card-text m-1">
+              <small>Tempat Praktik</small>
+            </p>
+            <h4 class="m-1">RSUD dr.Soedono</h4>
+            <p class="card-text m-1"><small>Harga</small></p>
+            <h4 id="price" class="m-1">Rp. 35.000</h4>
+          </div>
+        </div>
+
+        <div id="doctor-card" class="card card-sm-1 text-bg-dark">
+          <img src="assets/img/dokter/doctor2.png" class="card-img-top" alt="" />
+          <div class="card-img-overlay p-2">
+            <h2 id="doctor-name" class="card-title">dr. Farid Raihan</h2>
+            <p id="spesialisasi-text" class="card-text m-1">Dokter Umum</p>
+            <p id="place-title" class="card-text m-1">
+              <small>Tempat Praktik</small>
+            </p>
+            <h4 class="m-1">RSUD dr.Soedono</h4>
+            <p class="card-text m-1"><small>Harga</small></p>
+            <h4 id="price" class="m-1">Rp. 35.000</h4>
+          </div>
+        </div>
+
+        <div id="doctor-card" class="card card-sm-1 text-bg-dark">
+          <img src="assets/img/dokter/doctor3.png" class="card-img-top" alt="" />
+          <div class="card-img-overlay p-2">
+            <h2 id="doctor-name" class="card-title">dr. Kiran Shakia</h2>
+            <p id="spesialisasi-text" class="card-text m-1">Dokter Umum</p>
+            <p id="place-title" class="card-text m-1">
+              <small>Tempat Praktik</small>
+            </p>
+            <h4 class="m-1">RSUP Fatmawati</h4>
+            <p class="card-text m-1"><small>Harga</small></p>
+            <h4 id="price" class="m-1">Rp. 35.000</h4>
+          </div>
+        </div>
+
+        <div id="doctor-card" class="card card-sm-1 text-bg-dark">
+          <img src="assets/img/dokter/doctor4.png" class="card-img-top" alt="" />
+          <div class="card-img-overlay p-2">
+            <h2 id="doctor-name" class="card-title">dr. Masuda Khan</h2>
+            <p id="spesialisasi-text" class="card-text m-1">Dokter Umum</p>
+            <p id="place-title" class="card-text m-1">
+              <small>Tempat Praktik</small>
+            </p>
+            <h4 class="m-1">RSUD dr.Soedono</h4>
+            <p class="card-text m-1"><small>Harga</small></p>
+            <h4 id="price" class="m-1">Rp. 35.000</h4>
+          </div>
+        </div>
+
+        <div id="doctor-card" class="card card-sm- md text-bg-dark">
+          <img src="assets/img/dokter/doctor5.png" class="card-img-top" alt="" />
+          <div class="card-img-overlay p-2">
+            <h2 id="doctor-name" class="card-title">dr. Salman Khan</h2>
+            <p id="spesialisasi-text" class="card-text m-1">Dokter Umum</p>
+            <p id="place-title" class="card-text m-1">
+              <small>Tempat Praktik</small>
+            </p>
+            <h4 class="m-1">RSUD dr.Soedono</h4>
+            <p class="card-text m-1"><small>Harga</small></p>
+            <h4 id="price" class="m-1">Rp. 35.000</h4>
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!-- ARTIKEL -->
     <div class="container-article">
       <div class="d-flex justify-content-between align-items-center">
         <h3>Artikel</h3>
@@ -166,10 +238,9 @@
       </div>
 
       <div class="badges">
-        <span class="badge text-bg-primary">Terbaru</span>
-        <span class="badge text-bg-secondary">Terpopuler</span>
-        <span class="badge text-bg-secondary">Kehamilan</span>
-        <span class="badge text-bg-secondary">Kolesterol</span>
+        <a href="" id="badge-new" class="badge-articles">Terbaru</a>
+        <a href="" id="badge-secondary" class="badge-articles">Terpopuler</a>
+        <a href="" id="badge-secondary" class="badge-articles">Kehamilan</a>
       </div>
       <div id="card-article" class="row text-start g-0"></div>
     </div>

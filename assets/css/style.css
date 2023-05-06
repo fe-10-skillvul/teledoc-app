@@ -1,9 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-*{
+:root {
+  --primary: #255ed6;
+   --light-blue: #1890FF;
+  --font: #252424;
+  --white: #fffffff5;
+}
+
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 html {
@@ -15,7 +22,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #255ED6;
+  background-color: #255ed6;
   margin: 50px 0;
   padding: 40px;
 }
@@ -33,7 +40,7 @@ html {
 }
 
 #hero-button button {
-  color: #1890FF;
+  color: #1890ff;
   font-weight: 600;
   padding: 10px 20px;
   border: none;
@@ -45,14 +52,15 @@ html {
 }
 
 /* Spesialisasi Dokter */
-#spesialisasi {
+/* #spesialisasi {
   padding: 10px 0;
-}
+} */
 
-#spesialisasi h2 {
-  font-size: 24px; 
-  font-weight: 800; 
-  padding: 20px;
+.container-spesialisasi-dokter h3 {
+  font-size: 32px;
+  font-weight: 600;
+  /* padding: 20px; */
+  line-height: 25px;
 }
 
 #spesialisasi .row {
@@ -65,7 +73,7 @@ html {
 
 .spesialisasi-card {
   flex: 1;
-  text-align: center; 
+  text-align: center;
   padding-left: 20px;
 }
 
@@ -74,23 +82,301 @@ html {
   height: 80px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 15px; 
+  margin-bottom: 10px;
+  justify-content: space-between;
 }
 
 .spesialisasi-card p {
   font-size: 16px;
-  font-weight: 400; 
+  font-weight: 500;
+  line-height: 20px;
+  align-items: center;
 }
 
 .spesialisasi-card img:hover {
   cursor: pointer;
 }
 
+/* Dokter Tersedia */
+.container-dokter-tersedia {
+  margin: 0 8%;
+}
+
+.container-article {
+  margin: 0 8%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  max-width: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+  color: var(--font);
+  max-height: 2000px;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* DOKTER */
+
+.container-dokter-tersedia .d-flex{
+    margin-top: 40px;
+}
+
+.container-dokter-tersedia h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--font);
+}
+
+#col-doctor {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#doctor-card {
+  display: flex;
+  margin-top: 0;
+  border: none;
+  background-color: white;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  width: 260px;
+  height: 180px;
+}
+
+#doctor-card img {
+  flex-direction: row-reverse;
+  background-color: white;
+  height: 180px;
+  width: 400px;
+  object-fit: contain;
+  object-position: 100% 50%;
+}
+
+#doctor-name {
+  color: var(--font);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.75);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#spesialisasi-text {
+  color: var(--font);
+  font-size: 1rem;
+  font-weight: 700  ;
+}
+
+#place-title {
+  color: var(--font);
+  font-size: 0.8rem;
+}
+
+.card-img-overlay h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--font);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.75);
+}
+
+.card-img-overlay #price {
+  color: var(--primary);
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.75);
+}
+
+/* ARTIKEL */
+
+.row.g-0 {
+  gap: 0 20px;
+}
+
+.card-height {
+  height: 100%;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+
+.container-article .badges{
+    margin: 8px 0;
+}
+
+.container-article .badge-articles{
+    padding: 8px 12px;
+    text-decoration: none;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    margin-right: 8px;
+}
+
+.container-article #badge-new{
+    background-color: var(--primary);
+    color: white;
+}
+
+.container-article .badge-articles:hover {
+    background-color: var(--light-blue);
+    color: white;
+    border-color: var(--light-blue);
+}
+
+.card-height .card-body .badge {
+  padding: 6px 10px;
+  background-color: var(--light-blue);
+  font-weight: lighter;
+  width: auto;
+}
+
+.col-md.mt-sm-3 {
+  margin-top: 0;
+}
+
+.container-article .d-flex{
+    margin-top: 40px;
+}
+
+.container-article h3 {
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--font);
+}
+
+#card-article .card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--font);
+  margin-top: 5px;
+}
+
+.card-text {
+  font-size: 0.8rem;
+  font-weight: light;
+  color: var(--font);
+}
+
+.container-article .badge {
+  padding: 10px 12px;
+}
+/* Article End */
+
+/* media query dokter tersedia dan article*/
+@media (max-width: 1366px) {
+  #col-doctor {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-dokter-tersedia .d-flex h3,
+  .container-spesialisasi-dokter .d-flex h3 {
+    font-size: 1.2rem;
+  }
+
+  .container-dokter-tersedia .d-flex,
+  .container-spesialisasi-dokter .d-flex {
+    font-size: 75%;
+  }
+
+  #doctor-card img {
+    object-fit: none;
+    object-position: 100% 100%;
+  }
+
+  #doctor-name {
+    font-size: 90%;
+  }
+
+  #spesialisasi-text {
+    font-size: 75%;
+  }
+
+  #place-title {
+    font-size: 75%;
+  }
+
+  .card-img-overlay h4 {
+    font-size: 80%;
+  }
+
+  .row.g-0 {
+    margin-right: 0;
+    gap: 0 8px;
+  }
+
+  .container-article .d-flex {
+    font-size: 75%;
+  }
+
+  .container-article .d-flex h3 {
+    font-size: 1.2rem;
+  }
+
+  .container-article {
+    margin-top: 20px;
+  }
+
+  #col-doctor {
+    width: 100%;
+  }
+
+#card-article {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    height: 300px;
+  }
+
+  .card-article img {
+    height: 100px;
+    width: 100%;
+  }
+
+  #card-article .card-title {
+    font-size: 75%;
+  }
+
+  .card-text {
+    font-size: 75%;
+  }
+}
+
+@media (max-width: 450px) {
+  .container-dokter-tersedia h3,
+  .container-spesialisasi-dokter h3 {
+    font-size: 100%;
+  }
+
+  #col-doctor {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #doctor-card {
+    width: 100%;
+  }
+
+  #card-article {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 /* Media Query */
 /* Laptop */
 @media (max-width: 1366px) {
   html {
-      font-size: 75%;
+    font-size: 75%;
   }
 }
 
@@ -100,15 +386,15 @@ html {
     text-align: center;
     padding: 30px;
   }
-  
+
   #hero #hero-greeting h1 {
     font-size: 24px;
   }
-  
+
   #hero #hero-greeting p {
     font-size: 18px;
   }
-  
+
   #hero-button button {
     font-size: 16px;
     margin-top: 20px;
@@ -118,7 +404,7 @@ html {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .spesialisasi-card {
     width: 80%;
   }
@@ -130,25 +416,19 @@ html {
     text-align: center;
     padding: 30px;
   }
-  
+
   #hero #hero-greeting h1 {
     font-size: 24px;
   }
-  
+
   #hero #hero-greeting p {
     font-size: 18px;
   }
-  
+
   #hero-button button {
     font-size: 16px;
     margin-top: 20px;
   }
-}
-
-:root {
-  --primary: #255ed6;
-  --font: #252424;
-  --white: #fffffff5;
 }
 
 body {
@@ -162,7 +442,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #e5e5e5;
   top: 0;
   left: 0;
   right: 0;
@@ -198,7 +478,67 @@ body {
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(0.5);
 }
+.navbar-nav .active > .nav-link {
+  color: #007bff;
+}
 
+/* artikel */
+/* search bar */
+.search {
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+/* topik terkini */
+.topic {
+  margin-right: 10px;
+}
+
+/* artikel terpopuler */
+.top {
+  text-decoration: none;
+}
+.other {
+  text-decoration: none;
+}
+#otherArticles {
+  display: flex;
+  flex-wrap: wrap;
+}
+#otherArticles .card {
+  height: 69px;
+}
+#otherArticles .card-title {
+  font-size: 16px;
+  line-height: 1.2;
+  height: 38px;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+
+/* artikel terbaru */
+#article-card {
+  margin: 10px;
+  max-width: 260px;
+}
+#article-card .card-title {
+  font-weight: bold;
+}
+#article-card img {
+  height: 150px;
+  object-fit: cover;
+}
+#article-card .card-body {
+  height: 200px;
+  padding: 15px;
+  font-size: smaller;
+  overflow: auto;
+  text-overflow: ellipsis;
+}
+#load-more {
+  margin-top: 20px;
+}
 
 /* artikel */
 .search {
@@ -285,12 +625,12 @@ body {
 /* media query */
 @media (max-width: 1366px) {
   html {
-      font-size: 75%;
+    font-size: 75%;
   }
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   html {
     font-size: 75%;
   }
@@ -324,49 +664,22 @@ body {
     background-color: #ffffff;
     padding: 16px;
     display: none;
-  } */
+  }
   .navbar-collapse.show {
     display: block;
   }
-
   #otherArticles .card-title {
     overflow: visible;
-  }
-  #hero {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px;
-  }
-  
-  #hero #hero-greeting h1 {
-    font-size: 24px;
-  }
-  
-  #hero #hero-greeting p {
-    font-size: 18px;
-  }
-  
-  #hero-button button {
-    font-size: 16px;
-    margin-top: 20px;
-  }
-
-  #spesialisasi .row {
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .spesialisasi-card {
-    width: 80%;
   }
 }
 
 /* HP */
-@media (max-width: 450px) {
-  html {
-    font-size: 55%;
-  }
-  .navbarNav {
-    display: inline-block;
+  @media (max-width: 450px) {
+    html {
+      font-size: 55%;
+    }
+    .navbarNav {
+      display: inline-block;
+    }
   }
 }
