@@ -14,16 +14,18 @@
     </div>
 
     <script>
-      const bookmarkList = document.getElementById("bookmark-list");
+      const bookmarkList = document.getElementById('bookmark-list');
 
-      const bookmarkedArticles = Object.values(localStorage);
+      const bookmarkedArticles = localStorage.getItem('bookmark')
+        ? JSON.parse(localStorage.getItem('bookmark'))
+        : [];
       console.log(bookmarkedArticles);
 
       bookmarkedArticles.forEach(function (articleTitle) {
-        const listItem = document.createElement("li");
-        const link = document.createElement("a");
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
         link.href = `article.html?title=${encodeURIComponent(articleTitle)}`;
-        link.innerText = articleTitle;
+        link.innerText = articleTitle.title;
         listItem.appendChild(link);
         bookmarkList.appendChild(listItem);
       });
